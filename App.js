@@ -13,6 +13,8 @@ import WeatherApi from './WeatherApi.js';
 
 const Stack = createStackNavigator();
 
+const ThemeContext = React.createContext();
+
 
 export default function App() {
   const [location, setLocation] = useState(null);
@@ -55,7 +57,11 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Screen1" component={Screen1} />
+
+        {/* <Stack.Screen name="Screen1" component={Screen1} > */}
+        <Stack.Screen name="Screen1">
+          {() => <WeatherInfo currentWeather={currentWeather} location={location}/>}
+        </Stack.Screen>
         <Stack.Screen name="Screen2" component={Screen2} />
       </Stack.Navigator>
     </NavigationContainer>
@@ -66,7 +72,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'dodgerblue',
+    // backgroundColor: 'dodgerblue',
     alignItems: 'center',
     justifyContent: 'center',
   },
