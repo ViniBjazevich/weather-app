@@ -57,17 +57,14 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-
-        {/* <Stack.Screen name="Screen1" component={Screen1} > */}
-        <Stack.Screen name="Screen1">
+        <Stack.Screen name="Home" component={Screen1} />
+        <Stack.Screen name="Weather">
           {() => <WeatherInfo currentWeather={currentWeather} location={location}/>}
         </Stack.Screen>
-        <Stack.Screen name="Screen2" component={Screen2} />
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
-{/* <WeatherInfo currentWeather={currentWeather} location={location}/> */}
 
 const styles = StyleSheet.create({
   container: {
