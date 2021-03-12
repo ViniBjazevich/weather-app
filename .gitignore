@@ -8,7 +8,7 @@ npm-debug.*
 *.mobileprovision
 *.orig.*
 web-build/
-API_KEYS.js
+WeatherApi.js
 
 # macOS
 .DS_Store
