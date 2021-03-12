@@ -29,26 +29,26 @@ export default function WeatherInfo(props) {
         <View style={styles.moreInfoContainer}>
           <View style={styles.moreInfoRow}>
             <View style={[styles.moreInfoItem, styles.topItem]}>
-              <Ionicons name="water" size={30} color="black" />
-              <Text>Humidity</Text>
-              <Text>{humidity} %</Text>
+              <Ionicons name="water" size={30} color="white" />
+              <Text style={{color: 'white'}}>Humidity</Text>
+              <Text style={{color: 'white'}}>{humidity} %</Text>
             </View>
             <View style={[styles.moreInfoItem, styles.rightItem, styles.topItem]}>
-              <Feather name="wind" size={30} color="black" />
-              <Text>Wind</Text>
-              <Text>{wind} mph</Text>
+              <Feather name="wind" size={30} color="white" />
+              <Text style={{color: 'white'}}>Wind</Text>
+              <Text style={{color: 'white'}}>{wind} mph</Text>
             </View>
           </View>
           <View style={styles.moreInfoRow}>
             <View style={styles.moreInfoItem}>
-              <Feather name="sun" size={24} color="black" />
-              <Text>High</Text>
-              <Text>{high} °F</Text>
+              <Feather name="sun" size={24} color="white" />
+              <Text style={{color: 'white'}}>High</Text>
+              <Text style={{color: 'white'}}>{high} °F</Text>
             </View>
             <View style={[styles.moreInfoItem, styles.rightItem]}>
-              <FontAwesome name="snowflake-o" size={24} color="black" />
-              <Text>Low</Text>
-              <Text>{low} °F</Text>
+              <FontAwesome name="snowflake-o" size={24} color="white" />
+              <Text style={{color: 'white'}}>Low</Text>
+              <Text style={{color: 'white'}}>{low} °F</Text>
             </View>
           </View>
         </View>
@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     // justifyContent: 'center',
     width: '100%',
-    // backgroundColor: 'dodgerblue',
+    backgroundColor: 'dodgerblue',
     flex: 1,
   },
   mainInfo: {
@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
   },
   city: {
     fontSize: 35,
-    marginBottom: 10
+    marginBottom: 10,
   },
   temp: {
     fontSize: 40
@@ -95,19 +95,16 @@ const styles = StyleSheet.create({
     textTransform: 'capitalize'
   },
   moreInfoContainer: {
-    // flex: 1,
-    height: 125,
-    // backgroundColor: 'green',
-    backgroundColor: 'dodgerblue',
-    width: '100%'
+    height: 100,
+    width: '95%',
+    borderRadius: 10,
+    backgroundColor: '#4b4b4b',
+    marginBottom: 30
   },
   moreInfoRow: {
     width: '100%',
     // backgroundColor: 'red',
     flexDirection: 'row',
-    // borderBottom: '1px solid black'
-    // borderBottomColor: 'black',
-    // borderBottomWidth: 1,
   },
   moreInfoItem: {
     width: '50%',
@@ -118,12 +115,12 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around'
   },
   rightItem: {
-    borderLeftColor: 'black',
-    borderLeftWidth: 1,
+    // borderLeftColor: 'black',
+    // borderLeftWidth: 1,
   },
   topItem: {
-    borderBottomColor: 'black',
-    borderBottomWidth: 1,
+    // borderBottomColor: 'black',
+    // borderBottomWidth: 1,
   }
 
 });

@@ -3,8 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import * as Location from 'expo-location';
 import WeatherInfo from './components/WeatherInfo.js';
-import Screen1 from './components/Screen1.js';
-import Screen2 from './components/Screen2.js';
+import Home from './components/Home.js';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -57,7 +56,7 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Home" component={Screen1} />
+        <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="Weather">
           {() => <WeatherInfo currentWeather={currentWeather} location={location}/>}
         </Stack.Screen>
