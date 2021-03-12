@@ -2,10 +2,11 @@ import { StatusBar } from 'expo-status-bar';
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import * as Location from 'expo-location';
-import Top from './components/Top.js';
+
 import WeatherInfo from './components/WeatherInfo.js';
-import Bottom from './components/Bottom.js';
-import WeatherAPIKey from './API_KEYS.js';
+
+import WeatherApi from './WeatherApi.js';
+
 
 export default function App() {
   const [location, setLocation] = useState(null);
@@ -27,7 +28,7 @@ export default function App() {
       let location = await Location.getCurrentPositionAsync({});
       setLocation(location);
 
-      const BASE_WEATHER_URL = `https://api.openweathermap.org/data/2.5/weather?lat=${location.coords.latitude}&lon=${location.coords.longitude}&units=${units}&appid=${WeatherAPIKey}`
+      const BASE_WEATHER_URL = `https://api.openweathermap.org/data/2.5/weather?lat=${location.coords.latitude}&lon=${location.coords.longitude}&units=${units}&appid=${WeatherApi.key}`;
 
 
       const response = await fetch(BASE_WEATHER_URL);
@@ -47,9 +48,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Top />
       <WeatherInfo currentWeather={currentWeather} location={location}/>
-      <Bottom />
     </View>
   );
 }

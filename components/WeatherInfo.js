@@ -28,8 +28,9 @@ export default function WeatherInfo(props) {
 const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
+    justifyContent: 'center',
     width: '100%',
-    backgroundColor: 'green',
+    // backgroundColor: 'green',
     flex: 3
   },
   image: {
@@ -37,13 +38,15 @@ const styles = StyleSheet.create({
     width: 200,
   },
   city: {
-    fontSize: 30
+    fontSize: 35,
+    marginBottom: 10
   },
   temp: {
     fontSize: 40
   },
   description: {
-    fontSize: 25
+    fontSize: 22,
+    textTransform: 'capitalize'
   }
 
 });
