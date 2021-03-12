@@ -2,10 +2,16 @@ import { StatusBar } from 'expo-status-bar';
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import * as Location from 'expo-location';
-
 import WeatherInfo from './components/WeatherInfo.js';
+import Screen1 from './components/Screen1.js';
+import Screen2 from './components/Screen2.js';
+
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
 import WeatherApi from './WeatherApi.js';
+
+const Stack = createStackNavigator();
 
 
 export default function App() {
@@ -47,11 +53,15 @@ export default function App() {
   }
 
   return (
-    <View style={styles.container}>
-      <WeatherInfo currentWeather={currentWeather} location={location}/>
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Screen1" component={Screen1} />
+        <Stack.Screen name="Screen2" component={Screen2} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
+{/* <WeatherInfo currentWeather={currentWeather} location={location}/> */}
 
 const styles = StyleSheet.create({
   container: {
