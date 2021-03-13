@@ -1,15 +1,17 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { View, Text, Image, StyleSheet, ActivityIndicator} from 'react-native'
 import { Ionicons } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
+import { WeatherContext } from '../App.js';
 
 
 export default function WeatherInfo(props) {
-
+  const context = useContext(WeatherContext);
+  console.log('Wheater context: ', context)
   if (props.currentWeather && props.location) {
     let img = props.currentWeather.weather[0].icon;
-    console.log(img)
+    // console.log(img)
     let city = props.currentWeather.name;
     let description = props.currentWeather.weather[0].description;
     let temp = Math.floor(props.currentWeather.main.temp);
@@ -98,8 +100,9 @@ const styles = StyleSheet.create({
     height: 100,
     width: '95%',
     borderRadius: 10,
-    backgroundColor: '#4b4b4b',
-    marginBottom: 30
+    backgroundColor: 'black',
+    marginBottom: 30,
+    borderWidth: 1
   },
   moreInfoRow: {
     width: '100%',
