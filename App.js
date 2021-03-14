@@ -28,9 +28,9 @@ export default function App() {
 
   useEffect(() => {
     if (pickedLocation !== 'Current Location') {
-      axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${pickedLocation}&units=${units}&appid=2f9ee2c7fa8bd9e31f63140cfdfe40ea`)
+      console.log('Hello')
+      axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${pickedLocation}&units=${units}&appid=${WeatherApi.key}`)
         .then((res) => {
-          // console.log('Response from axios: ', res.data);
           setCurrentWeather(res.data)
         })
         .catch((err) => console.log(err))
@@ -38,7 +38,6 @@ export default function App() {
       if(location !== null) {
         axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${location.coords.latitude}&lon=${location.coords.longitude}&units=${units}&appid=${WeatherApi.key}`)
           .then((res) => {
-            // console.log('Response from axios: ', res.data);
             setCurrentWeather(res.data)
           })
           .catch((err) => console.log(err))
